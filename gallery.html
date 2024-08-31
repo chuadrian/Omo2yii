@@ -1,0 +1,286 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Gorditas:wght@400;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.4.1/dist/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+
+  <style>
+    :root {
+      --smokey-black: hsl(0, 0%, 7%);
+      --eerie-black: hsl(0, 0%, 9%);
+      --radical-red: hsl(346, 100%, 58%);
+      --white_a9: hsla(0, 0%, 100%, 0.09);
+      --white_a15: hsla(0, 0%, 100%, 0.15);
+      --white_a25: hsla(0, 0%, 100%, 0.25);
+      --white_a50: hsla(0, 0%, 100%, 0.5);
+      --white_a70: hsla(0, 0%, 100%, 0.7);
+      --white_a75: hsla(0, 0%, 100%, 0.75);
+      --white_a80: hsla(0, 0%, 100%, 0.8);
+      --jet-1: hsl(0, 0%, 20%);
+      --jet-2: hsl(0, 0%, 16%);
+      --white: hsl(0, 0%, 100%);
+      --black: hsl(0, 0%, 0%);
+    }
+
+    body {
+      background-color: var(--smokey-black);
+      color: var(--white);
+    }
+
+    .navbar {
+      background-color: var(--eerie-black);
+    }
+
+    .navbar-brand {
+      color: var(--radical-red) !important;
+      font-family: 'Gorditas', serif;
+    }
+
+    .nav-link {
+      color: var(--white_a75) !important;
+      font-family: 'Gorditas', serif;
+    }
+
+    .nav-link.active {
+      color: var(--radical-red) !important;
+    }
+
+    .dropdown-menu {
+      background-color: var(--eerie-black);
+    }
+
+    .dropdown-item {
+      color: var(--white) !important;
+      font-family: 'Gorditas', serif;
+      font-size: 20px;
+    }
+
+    .dropdown-item:hover {
+      background-color: var(--jet-1);
+      color: var(--radical-red) !important;
+    }
+
+    .w-100 {
+      border: 3px solid var(--white_a25);
+      transition: transform 0.3s ease-in-out, border-color 0.3s ease-in-out;
+    }
+
+    .w-100:hover {
+      transform: scale(1.05);
+      border-color: var(--radical-red);
+    }
+
+    .shadow-1-strong {
+      box-shadow: 0 4px 8px var(--jet-1);
+    }
+    .blurred {
+      filter: blur(22px);
+      transition: filter 0.3s ease-in-out;
+    }
+    /* Custom Modal CSS */
+    
+/* Custom Modal CSS */
+.modal {
+  display: none; /* Hidden by default */
+  position: fixed; /* Stay in place */
+  z-index: 1; /* Sit on top */
+  left: 0;
+  top: 0;
+  width: 100%; /* Full width */
+  height: 100%; /* Full height */
+  background-color: rgba(0, 0, 0, 0.7); /* Black w/ opacity */
+  overflow: hidden; /* Prevent scrolling */
+}
+
+.modal-content {
+  background-color: var(--eerie-black);
+  padding: 20px;
+  border: 1px solid var(--jet-2);
+  color: var(--white);
+  font-family: 'Gorditas', serif;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%); /* Center the modal */
+  width: 30vw; /* Square shape relative to viewport width */
+  height: 30vw; /* Equal width and height for square shape */
+  max-width: 90%; /* Max width to avoid overflow on smaller screens */
+  max-height: 90%; /* Max height to avoid overflow */
+  box-sizing: border-box; /* Include padding and border in width/height */
+}
+
+.close {
+  color: var(--white);
+  float: right;
+  font-size: 28px;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+.close:hover,
+.close:focus {
+  color: var(--radical-red);
+  text-decoration: none;
+}
+
+.btn {
+  margin: 5px;
+  padding: 5px;
+  font-size: 18px;
+  background-color: var(--radical-red);
+  color: var(--white);
+  border: none;
+  cursor: pointer;
+}
+
+.btn:hover {
+  background-color: var(--white);
+  color: var(--radical-red);
+}
+
+.password-group {
+  display: flex;
+  flex-direction: column; /* Change direction to vertical */
+  align-items: flex-start; /* Align to the left */
+  margin-bottom: 16px;
+}
+
+.show-password-checkbox {
+  margin-top: 8px; /* Add space between input and checkbox */
+}
+
+/* Adjust modal size for smaller screens */
+@media screen and (max-width: 500px) {
+  .modal-content {
+    width: 80vw; /* Square shape relative to viewport width */
+    height: 80vw; /* Equal width and height for square shape */
+  }
+}
+
+
+
+  </style>
+</head>
+<body>
+
+  <nav class="navbar navbar-expand-lg navbar-dark p-3 mb-4">
+    <div class="container-fluid">
+      <a class="navbar-brand" href="index.html">Omo2yii</a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+    
+      <div class="collapse navbar-collapse" id="navbarNavDropdown">
+        <ul class="navbar-nav ms-auto">
+          <li class="nav-item">
+            <a class="nav-link mx-2 active" aria-current="page" href="#">Home</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link mx-2" href="#">2d Animation</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link mx-2" href="#">Concept Arts</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link mx-2" href="#">Storyboards</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link mx-2" href="#">Comic Arts</a>
+          </li>
+          <li class="nav-item dropdown">
+            <a class="nav-link mx-2 dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+              2yii
+            </a>
+            <ul class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+              <li><a class="dropdown-item" href="#">About Me</a></li>
+              <li><a class="dropdown-item" href="#">Contact Me</a></li>
+              <li><a class="dropdown-item" href="#">My Space</a></li>
+            </ul>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Gallery -->
+  <div class="row">
+    <div class="col-lg-4 col-md-12 mb-4 mb-lg-0">
+      <img
+        src="https://mdbcdn.b-cdn.net/img/Photos/Horizontal/Nature/4-col/img%20(73).webp"
+        class="w-100 shadow-1-strong rounded mb-4 blurred"
+        alt="Boat on Calm Water"
+        onclick="showPasswordPrompt(this)"
+      />
+  
+      <img
+        src="https://mdbcdn.b-cdn.net/img/Photos/Vertical/mountain1.webp"
+        class="w-100 shadow-1-strong rounded mb-4"
+        alt="Wintry Mountain Landscape"
+      />
+    </div>
+  
+    <div class="col-lg-4 mb-4 mb-lg-0">
+      <img
+        src="https://mdbcdn.b-cdn.net/img/Photos/Vertical/mountain2.webp"
+        class="w-100 shadow-1-strong rounded mb-4"
+        alt="Mountains in the Clouds"
+      />
+  
+      <img
+        src="https://mdbcdn.b-cdn.net/img/Photos/Horizontal/Nature/4-col/img%20(73).webp"
+        class="w-100 shadow-1-strong rounded mb-4 blurred"
+        alt="Boat on Calm Water"
+        onclick="showPasswordPrompt(this)"
+      />
+    </div>
+  
+    <div class="col-lg-4 mb-4 mb-lg-0">
+      <img
+        src="https://mdbcdn.b-cdn.net/img/Photos/Horizontal/Nature/4-col/img%20(18).webp"
+        class="w-100 shadow-1-strong rounded mb-4"
+        alt="Waves at Sea"
+      />
+  
+      <img
+        src="https://mdbcdn.b-cdn.net/img/Photos/Vertical/mountain3.webp"
+        class="w-100 shadow-1-strong rounded mb-4 blurred"
+        alt="Yosemite National Park"
+        onclick="showPasswordPrompt(this)"
+      />
+    </div>
+  </div>
+  <!-- Gallery -->
+
+
+  <div id="passwordModal" class="modal">
+    <div class="modal-content">
+      <span class="close" onclick="closeModal()">&times;</span>
+      <p>Please enter the password to view the image:</p>
+      <input type="password" id="passwordInput" style="width: 100%; padding: 10px; margin-bottom: 10px;">
+      <div class="password-group">
+        <input type="checkbox" id="showPasswordCheckbox" class="show-password-checkbox">
+        <label for="show_password">Show Password</label>
+    </div><br>
+      <button class="btn" onclick="validatePassword()">Enter</button>
+      <button class="btn"><a href="contactme.html">Request Password</a></button>
+    </div>
+  </div>
+
+
+  
+  
+  
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
+  <script src="./assets/js/gallery.js"></script>
+
+</body>
+</html>
+
+
+
