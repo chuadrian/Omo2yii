@@ -1,0 +1,113 @@
+:root {
+    --smokey-black: hsl(0, 0%, 7%);
+    --eerie-black: hsl(0, 0%, 9%);
+    --radical-red: hsl(346, 100%, 58%);
+    --white_a9: hsla(0, 0%, 100%, 0.09);
+    --white_a15: hsla(0, 0%, 100%, 0.15);
+    --white_a25: hsla(0, 0%, 100%, 0.25);
+    --white_a50: hsla(0, 0%, 100%, 0.5);
+    --white_a70: hsla(0, 0%, 100%, 0.7);
+    --white_a75: hsla(0, 0%, 100%, 0.75);
+    --white_a80: hsla(0, 0%, 100%, 0.8);
+    --jet-1: hsl(0, 0%, 20%);
+    --jet-2: hsl(0, 0%, 16%);
+    --white: hsl(0, 0%, 100%);
+    --black: hsl(0, 0%, 0%);
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    font-family: 'Gorditas', sans-serif;
+}
+
+.contact-section {
+    background: var(--smokey-black);
+    padding: 40px 0;
+    background-size: cover;
+}
+
+.contact-header {
+    display: flex; /* Align icon and heading horizontally */
+    align-items: center; /* Vertically center align the icon and heading */
+    justify-content: center; /* Center horizontally */
+    gap: 15px; /* Adds some space between the home icon and the heading */
+    margin-bottom: 10px; /* Adds some spacing below the header */
+}
+
+.home-icon {
+    width: 40px; /* Adjusted size for better alignment */
+    height: auto; /* Maintain aspect ratio */
+}
+
+.contact-section h1 {
+    color: var(--white_a75);
+    margin: 0; /* Remove default margin */
+    font-size: 2em; /* Adjust font size as needed */
+    text-align: center;
+}
+
+.border {
+    width: 100px;
+    height: 10px;
+    background: var(--jet-1);
+    margin: 20px auto; /* Adjusted margin for better spacing */
+}
+
+.contact-form {
+    max-width: 600px;
+    margin: auto;
+    padding: 0 10px;
+    overflow: hidden;
+}
+
+.contact-form-text {
+    display: block;
+    width: 100%;
+    box-sizing: border-box;
+    margin: 16px 0;
+    border: 0;
+    background-color: var(--eerie-black);
+    padding: 20px 40px;
+    outline: none;
+    color: var(--white_a70);
+    font-family: Arial, sans-serif; /* Updated font for readability */
+    transition: 0.5s;
+}
+
+.contact-form-text:focus {
+    box-shadow: 0 0 10px 4px var(--jet-1);
+}
+
+textarea.contact-form-text {
+    resize: none;
+    height: 120px;
+}
+
+.contact-form-btn-wrapper {
+    display: flex; /* Align button and icon side by side */
+    align-items: center; /* Vertically center align items */
+    justify-content: flex-end; /* Align items to the right */
+    margin-top: 10px; /* Optional: Add margin for spacing */
+}
+
+.contact-form-btn {
+    border: 0;
+    background: var(--jet-1);
+    color: var(--white);
+    padding: 10px 20px; /* Adjusted padding for a balanced button size */
+    border-radius: 20px;
+    cursor: pointer;
+    transition: 0.5s;
+    margin-right: 10px; /* Space between button and icon */
+}
+
+.contact-form-btn:hover {
+    background: var(--radical-red);
+}
+
+.send-icon {
+    width: 20px; /* Set a specific width for the icon */
+    height: auto; /* Maintain aspect ratio */
+    cursor: pointer; /* Add pointer cursor for interactivity */
+}
